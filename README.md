@@ -30,4 +30,4 @@ go build ./...
 
 Prebuilt binaries for linux/darwin/windows (amd64+arm64) are published to
 [GitHub Releases](https://github.com/YuzuZensai/Git-Identity-Audit/releases)
-whenever a tag is pushed:
+whenever a tag is pushed

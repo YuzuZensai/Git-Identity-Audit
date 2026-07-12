@@ -1,0 +1,20 @@
+# Build artifacts
+/git-identity-audit
+*.exe
+*.test
+*.out
+
+# Generated reports
+git-identity-audit-*.html
+
+# Go tooling
+/vendor/
+
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/
+
+# Output
+*.html
+!template.html

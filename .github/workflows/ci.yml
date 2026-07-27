@@ -44,11 +44,12 @@ jobs:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
           CGO_ENABLED: "0"
+          VERSION: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || github.sha }}
         run: |
           ext=""
           if [ "$GOOS" = "windows" ]; then ext=".exe"; fi
           mkdir -p dist
-          go build -o "dist/git-identity-audit-${GOOS}-${GOARCH}${ext}" .
+          go build -o "dist/git-identity-audit-${VERSION}-${GOOS}-${GOARCH}${ext}" .
       - uses: actions/upload-artifact@v5
         with:
           name: git-identity-audit-${{ matrix.goos }}-${{ matrix.goarch }}
@@ -67,4 +68,5 @@ jobs:
           merge-multiple: true
       - uses: softprops/action-gh-release@v2
         with:
+          name: ${{ github.ref_name }}
           files: dist/*

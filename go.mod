@@ -3,7 +3,7 @@ module github.com/YuzuZensai/Git-Identity-Audit
 go 1.26.4
 
 require (
-	github.com/vbauerster/mpb/v8 v8.14.0
+	github.com/vbauerster/mpb/v8 v8.15.2
 	golang.org/x/term v0.45.0
 )
 
